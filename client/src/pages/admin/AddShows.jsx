@@ -4,6 +4,7 @@ import Title from "../../components/admin/Title";
 import Loading from "../../components/Loading";
 import { CheckIcon, DeleteIcon, StarIcon } from "lucide-react";
 import { kConverter } from "../../lib/kConverter";
+//import { useAppContext } from "../../context/appContext";
 
 
 
@@ -16,8 +17,23 @@ const AddShows = () => {
     const [dateTimeInput, setDateTimeInput] = useState("");
     const [showPrice, setShowPrice] = useState("");
 
+    //const {axios, getToken, user} = useAppContext();
+
     const fetchNowPlayingMovies = async() => {
         setNowPlayingMovies(dummyShowsData);
+        // try{
+        //     const {data} = await axios.get("/api/show/now-playing",{
+        //         headers : {Authorization : `Bearer ${await getToken()}`}
+        //     })
+
+        //     if(data.success){
+        //         setNowPlayingMovies(data.movies);
+        //     }
+        // }
+        // catch(error){
+        //     console.log(error);
+        // }
+
     };
 
     const selectMovieHandler = (movieId) => {

@@ -3,11 +3,9 @@ const mongoose = require("mongoose");
 const showSchema = new mongoose.Schema(
     {
         movie : {
-            type : {
-                type : String,
-                required : true,
-                ref : "Movie"
-            }
+            type : String,
+            required : true,
+            ref : "Movie"
         },
         showDateTime : {
             type : Date,
@@ -21,7 +19,7 @@ const showSchema = new mongoose.Schema(
             type : Object,
             default : {}
         }   
-    }
+    }, {minimize: false}
 )
 
 
